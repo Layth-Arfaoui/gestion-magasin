@@ -24,5 +24,14 @@ public class Produit {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Produit{" +
+                "identifiant=" + identifiant +
+                ", libelle='" + libelle + '\'' +
+                ", marque='" + marque + '\'' +
+                ", prix=" + prix +
+                ", dateExpiration=" + dateExpiration +
+                '}';
+    }
 }

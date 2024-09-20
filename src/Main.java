@@ -20,6 +20,7 @@ Produit p1 =new Produit(1021,"lait","delice",13);
 
         // 5. Compléter les informations manquantes
         p2.prix = 500;
+        p3.prix=900;
 
         // 6. Afficher les produits modifiés
         System.out.println("\nProduits modifiés:");
