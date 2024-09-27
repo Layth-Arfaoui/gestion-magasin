@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-Produit produitVide =new Produit();
+/*Produit produitVide =new Produit();
             System.out.println("Produit vide créé: " + produitVide);
 
 Produit p1 =new Produit(1021,"lait","delice",13);
@@ -13,22 +13,18 @@ Produit p1 =new Produit(1021,"lait","delice",13);
         p2.afficher();
         p3.afficher();
 
-        // 4. Attribuer le prix
         p1.prix = 700;
         System.out.println("Produit lait après modification:");
         p1.afficher();
 
-        // 5. Compléter les informations manquantes
         p2.prix = 500;
         p3.prix=900;
 
-        // 6. Afficher les produits modifiés
         System.out.println("\nProduits modifiés:");
         p1.afficher();
         p2.afficher();
         p3.afficher();
 
-        // 7. Afficher les produits avec toString()
         System.out.println("\nProduits avec toString():");
         System.out.println(p1);
         System.out.println(p2);
@@ -47,7 +43,8 @@ Produit p1 =new Produit(1021,"lait","delice",13);
         System.out.println("\nProduits avec date d'expiration:");
         p1.afficher();
         p2.afficher();
-        p3.afficher();
+        p3.afficher();*/
 
     }
-}
+
+    }

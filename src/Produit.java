@@ -7,6 +7,46 @@ public class Produit {
  float prix;
     Date dateExpiration;
 
+    public int getIdentifiant() {
+        return identifiant;
+    }
+
+    public void setIdentifiant(int identifiant) {
+        this.identifiant = identifiant;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public String getMarque() {
+        return marque;
+    }
+
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
+
+    public Date getDateExpiration() {
+        return dateExpiration;
+    }
+
+    public void setDateExpiration(Date dateExpiration) {
+        this.dateExpiration = dateExpiration;
+    }
+
     public Produit() {
     }
 
