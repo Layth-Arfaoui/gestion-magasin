@@ -41,6 +41,14 @@ public class Magasin {
     public static int getTotalProduits() {
         return totalProduits;
     }
-
+    @Override
+    public String toString() {
+        return "Magasin{" +
+                "identifiant='" + identifiant + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", capacite=" + capacite +
+                ", nombreProduits=" + nombreProduits +
+                '}';
+    }
 
 }

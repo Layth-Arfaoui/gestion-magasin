@@ -44,7 +44,17 @@ Produit p1 =new Produit(1021,"lait","delice",13);
         p1.afficher();
         p2.afficher();
         p3.afficher();*/
+            Magasin magasin1 = new Magasin("M1", "123 Rue A", 50);
+            magasin1.ajouterProduit(new Produit(1,"car","car",20));
+            magasin1.ajouterProduit(new Produit(2,"kinder","chocloate",50));
 
+            Magasin magasin2 = new Magasin("M2", "456 Rue B", 50);
+            magasin2.ajouterProduit(new Produit(6,"chargeur","chargeur",90));
+
+            magasin1.afficherDetails();
+            magasin2.afficherDetails();
+
+            System.out.println("Total de produits  " + Magasin.getTotalProduits());
     }
 
     }
