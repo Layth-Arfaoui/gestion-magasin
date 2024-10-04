@@ -23,7 +23,7 @@ public class Magasin {
             }
         }
 
-        // Check if there's capacity to add the product
+        // tchouf idha fama capacite bech tzid
         if (nombreProduits < capacite) {
             produits[nombreProduits] = produit;
             nombreProduits++;
@@ -34,7 +34,23 @@ public class Magasin {
             return false;
         }
     }
-
+    public boolean supprimer(Produit p) {
+        for (int i = 0; i < nombreProduits; i++) {
+            if (produits[i].comparer(p)) {
+                // Shift products to the left to fill the gap
+                for (int j = i; j < nombreProduits - 1; j++) {
+                    produits[j] = produits[j + 1];
+                }
+                produits[nombreProduits - 1] = null; // Clear the last product
+                nombreProduits--;
+                totalProduits--;
+                System.out.println("Produit supprimé: " + p);
+                return true;
+            }
+        }
+        System.out.println("Produit non trouvé: " + p);
+        return false;
+    }
     public void afficherDetails() {
         System.out.println("Magasin ID: " + identifiant);
         System.out.println("Adresse: " + adresse);
