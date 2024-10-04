@@ -1,6 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.List;
-
 public class Magasin {
     private String identifiant;
     private String adresse;
@@ -18,6 +15,15 @@ public class Magasin {
     }
 
     public boolean ajouterProduit(Produit produit) {
+        // Check if the product is already in the store
+        for (int i = 0; i < nombreProduits; i++) {
+            if (produits[i].comparer(produit)) {
+                System.out.println("Le produit est déjà présent dans le magasin.");
+                return false;
+            }
+        }
+
+        // Check if there's capacity to add the product
         if (nombreProduits < capacite) {
             produits[nombreProduits] = produit;
             nombreProduits++;
@@ -28,19 +34,34 @@ public class Magasin {
             return false;
         }
     }
+
     public void afficherDetails() {
         System.out.println("Magasin ID: " + identifiant);
         System.out.println("Adresse: " + adresse);
         System.out.println("Capacité: " + capacite);
         System.out.println("Produits:");
         for (int i = 0; i < nombreProduits; i++) {
-            System.out.println("Nom: " + produits[i].getLibelle() + ", Prix: " + produits[i].getPrix());
+            System.out.println(produits[i]);
         }
+    }
+
+    public boolean chercherProduit(Produit produit) {
+        for (int i = 0; i < nombreProduits; i++) {
+            if (produits[i].comparer(produit)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Magasin comparerMagasins(Magasin magasin1, Magasin magasin2) {
+        return magasin1.nombreProduits > magasin2.nombreProduits ? magasin1 : magasin2;
     }
 
     public static int getTotalProduits() {
         return totalProduits;
     }
+
     @Override
     public String toString() {
         return "Magasin{" +
@@ -50,5 +71,4 @@ public class Magasin {
                 ", nombreProduits=" + nombreProduits +
                 '}';
     }
-
 }

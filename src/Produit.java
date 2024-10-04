@@ -1,68 +1,32 @@
 import java.util.Date;
 
 public class Produit {
- int identifiant;
-  String libelle;
- String marque;
- float prix;
+    int identifiant;
+    String libelle;
+    String marque;
+    float prix;
     Date dateExpiration;
-
-    public int getIdentifiant() {
-        return identifiant;
-    }
-
-    public void setIdentifiant(int identifiant) {
-        this.identifiant = identifiant;
-    }
-
-    public String getLibelle() {
-        return libelle;
-    }
-
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
-    }
-
-    public String getMarque() {
-        return marque;
-    }
-
-    public void setMarque(String marque) {
-        this.marque = marque;
-    }
-
-    public float getPrix() {
-        return prix;
-    }
-
-    public void setPrix(float prix) {
-        this.prix = prix;
-    }
-
-    public Date getDateExpiration() {
-        return dateExpiration;
-    }
-
-    public void setDateExpiration(Date dateExpiration) {
-        this.dateExpiration = dateExpiration;
-    }
-
-    public Produit() {
-    }
 
     public Produit(int identifiant, String libelle, String marque, float prix) {
         this.identifiant = identifiant;
         this.libelle = libelle;
         this.marque = marque;
         this.prix = prix;
+        this.dateExpiration = dateExpiration;
     }
-    public void afficher() {
-        System.out.println("Produit ID: " + identifiant);
-        System.out.println("Libellé: " + libelle);
-        System.out.println("Marque: " + marque);
-        System.out.println("Prix: " + prix);
+// Getters and Setters...
+
+    public boolean comparer(Produit autreProduit) {
+        if (autreProduit == null) return false;
+
+        return this.identifiant == autreProduit.identifiant &&
+                (this.libelle == null ? autreProduit.libelle == null : this.libelle.equals(autreProduit.libelle)) &&
+                this.prix == autreProduit.prix;
     }
 
+    public static boolean comparer(Produit produit1, Produit produit2) {
+        return produit1.comparer(produit2);
+    }
 
     @Override
     public String toString() {

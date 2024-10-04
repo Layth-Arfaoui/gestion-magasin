@@ -1,8 +1,8 @@
-import java.util.Date;
+/*import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-/*Produit produitVide =new Produit();
+Produit produitVide =new Produit();
             System.out.println("Produit vide créé: " + produitVide);
 
 Produit p1 =new Produit(1021,"lait","delice",13);
@@ -43,7 +43,7 @@ Produit p1 =new Produit(1021,"lait","delice",13);
         System.out.println("\nProduits avec date d'expiration:");
         p1.afficher();
         p2.afficher();
-        p3.afficher();*/
+        p3.afficher();
             Magasin magasin1 = new Magasin("M1", "123 Rue A", 50);
             magasin1.ajouterProduit(new Produit(1,"car","car",20));
             magasin1.ajouterProduit(new Produit(2,"kinder","chocloate",50));
@@ -55,6 +55,38 @@ Produit p1 =new Produit(1021,"lait","delice",13);
             magasin2.afficherDetails();
 
             System.out.println("Total de produits  " + Magasin.getTotalProduits());
+        Produit produitTest = new Produit(1, "car", "car", 20);
+        System.out.println("Produit trouvé dans magasin1? " + magasin1.chercherProduit(produitTest));
+
+        Magasin magasinAvecPlusDeProduits = Magasin.comparerMagasins(magasin1, magasin2);
+        System.out.println("Magasin avec plus de produits: " + magasinAvecPlusDeProduits);
+
     }
 
     }
+variable de classe */
+public class Main {
+    public static void main(String[] args) {
+        Magasin magasin1 = new Magasin("M1", "123 Rue A", 50);
+        magasin1.ajouterProduit(new Produit(1, "car", "car", 20));
+        magasin1.ajouterProduit(new Produit(2, "kinder", "chocolat", 50));
+
+        // Attempt to add a product with null libelle to check error handling
+        Produit produitNullLibelle = new Produit(3, null, "marque", 30);
+        magasin1.ajouterProduit(produitNullLibelle); // This should now handle the null case.
+
+        Magasin magasin2 = new Magasin("M2", "456 Rue B", 50);
+        magasin2.ajouterProduit(new Produit(6, "chargeur", "chargeur", 90));
+
+        magasin1.afficherDetails();
+        magasin2.afficherDetails();
+
+        System.out.println("Total de produits: " + Magasin.getTotalProduits());
+
+        Produit produitTest = new Produit(1, "car", "car", 20);
+        System.out.println("Produit trouvé dans magasin1? " + magasin1.chercherProduit(produitTest));
+
+        Magasin magasinAvecPlusDeProduits = Magasin.comparerMagasins(magasin1, magasin2);
+        System.out.println("Magasin avec plus de produits: " + magasinAvecPlusDeProduits);
+    }
+}
