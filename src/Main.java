@@ -64,9 +64,11 @@ Produit p1 =new Produit(1021,"lait","delice",13);
     }
 
     }
+    les attributs et les methodes de classe
+
 variable de classe */
-public class Main {
-    public static void main(String[] args) {
+
+   /* public static void main(String[] args) {
         Magasin magasin1 = new Magasin("M1", "123 Rue A", 50);
         magasin1.ajouterProduit(new Produit(1, "car", "car", 20));
         magasin1.ajouterProduit(new Produit(2, "kinder", "chocolat", 50));
@@ -98,7 +100,46 @@ public class Main {
 
 
 
-        // Display products after deletion
+         Display products after deletion
         magasin1.afficherDetails();
     }
-}
+}*/
+   public class Main {
+       public static void main(String[] args) {
+           // Create two Magasins
+           Magasin carrefour = new Magasin("1", "Carrefour", 50);
+           Magasin monoprix = new Magasin("2", "Monoprix", 50);
+
+           carrefour.ajouterEmploye(new Vendeur(2, "Sara", "Rue B", 160, 30));
+           carrefour.ajouterEmploye(new Responsable(3, "Amine", "Rue C", 170, 300));
+
+           // Add employees to Monoprix
+           monoprix.ajouterEmploye(new Caissier(4, "Mouna", "Rue D", 185, 8));
+           monoprix.ajouterEmploye(new Vendeur(5, "Nabil", "Rue E", 150, 40));
+           monoprix.ajouterEmploye(new Responsable(6, "Hatem", "Rue F", 165, 500));
+
+           // Add products to Carrefour
+           carrefour.ajouterProduit(new Produit(1, "Laptop", "sony", 5));
+           carrefour.ajouterProduit(new Produit(2, "Smartphone", "lg", 10));
+
+           // Add products to Monoprix
+           monoprix.ajouterProduit(new Produit(3, "Refrigerator", "avaxia", 3));
+           monoprix.ajouterProduit(new Produit(4, "Microwave", "exitecs", 15));
+
+           // Display details of Carrefour
+           System.out.println("Details of Carrefour:");
+           carrefour.afficherDetails();
+
+           // Display details of Monoprix
+           System.out.println("\nDetails of Monoprix:");
+           monoprix.afficherDetails();
+
+           // Display salaries of employees in Carrefour
+           System.out.println("\nSalaries of employees in Carrefour:");
+           carrefour.afficherSalaires();
+
+           // Display salaries of employees in Monoprix
+           System.out.println("\nSalaries of employees in Monoprix:");
+           monoprix.afficherSalaires();
+       }
+   }

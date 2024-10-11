@@ -5,13 +5,18 @@ public class Magasin {
     private Produit[] produits;
     private int nombreProduits;
     private static int totalProduits = 0;
+    private Employee[] employes;
+    private int nombreEmployes; // Keep track of number of employees
+
 
     public Magasin(String identifiant, String adresse, int capacite) {
         this.identifiant = identifiant;
         this.adresse = adresse;
         this.capacite = capacite;
         this.produits = new Produit[capacite];
+        this.employes = new Employee[20];
         this.nombreProduits = 0;
+        this.nombreEmployes = 0;
     }
 
     public boolean ajouterProduit(Produit produit) {
@@ -87,4 +92,24 @@ public class Magasin {
                 ", nombreProduits=" + nombreProduits +
                 '}';
     }
+    public boolean ajouterEmploye(Employee employee) {
+        if (nombreEmployes < 20) { // Max 20 employees
+            Employee[] employeee = new Employee[20];
+            employeee [nombreEmployes] = employee;
+            nombreEmployes++;
+            return true;
+        } else {
+            System.out.println("Cannot add more employees, max capacity reached.");
+            return false;
+        }
+    }
+    public void afficherSalaires() {
+        for (int i = 0; i < nombreEmployes; i++) {
+            Employee employe = employes[i];
+            if (employe != null) {  // Check if the employee is not null
+                System.out.println(employe.toString() + " - Salaire: " + employe.calculerSalaire() + " DT");
+            }
+        }
+    }
+
 }
